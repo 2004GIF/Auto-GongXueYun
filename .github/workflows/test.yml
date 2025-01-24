@@ -1,13 +1,4 @@
-name: "自动签到脚本"
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "40 23 * * *" # 上班卡
-    - cron: "15 03 * * *" # 每日签到检查，如不需要可删除这行
-    - cron: "40 08 * * *" # 下班卡
-    - cron: "15 15 * * *" # 每日签到检查，如不需要可删除这行
-
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
