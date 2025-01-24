@@ -11,21 +11,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
-        
-    - name: Install depend
-      run: |
-        pip install requests
-
-    - name: Start sign
-      env:
-        USERS: ${{ secrets.USERS }}
-      run: |
-        python main.py
-
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Install depend
+        run: |
+          pip install requests
+      - name: Start sign
+        env:
+          USERS: ${{ secrets.USERS }}
+        run: |
+          python main.py
